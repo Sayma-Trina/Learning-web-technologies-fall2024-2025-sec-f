@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML FORM</title>
+</head>
+ 
+<style>
+    table, th, td { 
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+ 
+<body style="font-family: Arial, sans-serif; background-color: aliceblue; display: flex; justify-content: center;">
+ 
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input id="Username" type="text"><br><br></td>
+        </tr>
+        <tr>
+            <td>   <label for="">ID</label><br><br></td>
+            <td><input id="ID" type="number"><br><br></td>
+        </tr>
+        <tr>
+            <td><label for="">Password</label><br><br></td>
+            <td><input type="password" id="Password"><br><br></td>
+        </tr>
+        <tr>
+            <td><label for="">Department Name</label><br></td>
+            <td>
+                <select name="" id="">
+                    <option value="">CSE</option>
+                    <option value="">EEE</option>
+                    <option value="">BBA</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="">Marital Status</label></td>
+            <td>
+                <select name="" id="">
+                    <option value="married">Married</option>
+                    <option value="unmarried">Unmarried</option>  
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="">Gender</label></td>
+            <td>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
