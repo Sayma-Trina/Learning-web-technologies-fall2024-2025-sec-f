@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    
+    <title>Date Validation</title>
+    <script>
+        function validateDate() {
+            let date = document.getElementById("date").value.trim();
+            let dateParts = date.split("-");
+            if (dateParts.length === 3) {
+                let day = parseInt(dateParts[0]);
+                let month = parseInt(dateParts[1]);
+                let year = parseInt(dateParts[2]);
+                if (isNaN(day) || isNaN(month) || isNaN(year) || day < 1 || day > 31 || month < 1 || month > 12 || year < 1900 || year > 2016) {
+                    alert(" ust be within 1950-2025 in dd-mm-yyyy format.");
+                    return false;
+                }
+            } else {
+                alert("Invalid Date Format: Use dd-mm-yyyy.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Date Validation</h2>
+    <form  onsubmit="return validateDate()">
+        <label>Date (dd-mm-yyyy):</label>
+        <input type="text" id="date" name="date"><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
