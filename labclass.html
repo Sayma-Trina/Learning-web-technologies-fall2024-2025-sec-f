@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <title>login</title>
+</head>
+<body>
+    <h1 id="head">login</h1>
+    <input type="text" id="username" name="username" value="" onblur="login_validation()" /> 
+    <input type="text" id="password" name="password" value="" onblur="login_validation()" /> 
+    <input type="button" id="button" name="button" value="button" onclick="login_validation()"/>
+    <p id="error"></p>
+
+    <script>
+        function login_validation() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let error = document.getElementById('error');
+            let head = document.getElementById('head');
+
+            if (username === "" && password === "") {
+                error.innerHTML = "Please type username and password first!";
+                error.style.color = 'red';
+                head.innerHTML = "";
+            } else {
+                head.innerHTML = "Username: " + username + "<br>Password: " + password;
+                error.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>

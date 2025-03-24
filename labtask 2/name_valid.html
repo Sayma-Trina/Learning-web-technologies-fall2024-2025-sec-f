@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Name Validation</title>
+</head>
+<body>
+    <h2>Name Validation</h2>
+    <form onsubmit="return validateName()">
+        <label>Name:</label>
+        <input type="text" id="name" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+<script>
+    function validateName() {
+        let name = document.getElementById("name").value.trim();
+        
+    
+        let nameParts = name.split(' ');
+
+        if (nameParts.length < 2) {
+            alert("must contain at least two words.");
+            return false;
+        }
+        function isLetter(char) {
+            return char.toLowerCase() !== char.toUpperCase();
+        }
+     
+        if (!isLetter(nameParts[0][0])) {
+            alert("the first word must start with a letter.");
+            return false;
+        }
+
+]
+        for (let i = 0; i < nameParts.length; i++) {
+            for (let j = 0; j < nameParts[i].length; j++) {
+              
+                if (!isLetter(nameParts[i][j]) && nameParts[i][j] !== ' ' && nameParts[i][j] !== '.' && nameParts[i][j] !== '-') {
+                    alert("the name can only contain letters, spaces, dots, and dashes.");
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+   
+</script>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Email Validation</title>
+    <script>
+        function validateEmail() {
+            let email = document.getElementById("email").value;
+            
+    
+            let atIndex = email.indexOf('@');
+            if (atIndex === -1 || email.indexOf('@', atIndex + 1) !== -1) {
+                alert("must contain exactly one '@' symbol.");
+                return false;
+            }
+
+            if (atIndex === 0) {
+                alert("There must be characters before the '@' symbol.");
+                return false;
+            }
+         
+
+            let firstPart = email.substring(0, atIndex);
+            let secondPart = email.substring(atIndex + 1);
+          
+            let dotIndex = secondPart.indexOf('.');
+            if (dotIndex === -1) {
+                alert(" must contain at least one '.' symbol.");
+                return false;
+            }
+
+            if (dotIndex === 0) {
+                alert("there must be characters before the '.' symbol.");
+                return false;
+            }
+
+            let lastDotIndex = secondPart.lastIndexOf('.');
+            if (lastDotIndex === secondPart.length - 1) {
+                alert(" must not end with a '.' symbol.");
+                return false;
+            }
+
+          
+            if (firstPart.length === 0 || secondPart.length === 0) {
+                alert(" Both  parts must contain characters.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Email Validation</h2>
+    <form onsubmit="return validateEmail()">
+        <label>Email:</label>
+        <input type="email" id="email" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
